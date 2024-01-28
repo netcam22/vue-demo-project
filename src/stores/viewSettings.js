@@ -3,10 +3,10 @@ import { defineStore } from 'pinia';
 export const useViewSettingsStore = defineStore("viewSettings", {
   state: () => ({
     imageSources: {
-      home: "../assets/fakelandiaLogo.png",
-      about: "../assets/logoHHH.png",
-      contact: "../assets/itedulogo.png",
-      items: "../assets/logoSmall.png",
+      home: "/src/assets/fakelandiaLogo.png",
+      about: "/src/assets/logoHHH.png",
+      contact: "/src/assets/itedulogo.png",
+      items: "/src/assets/logoSmall.png",
       },
   }
   ),
