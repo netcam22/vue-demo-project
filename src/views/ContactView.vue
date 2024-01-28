@@ -1,9 +1,10 @@
 <script setup>
-import PageHeader from './../components/PageHeader.vue';
+import PageHeader from '@/components/PageHeader.vue';
+const view = "contact";
 </script>
 
 <template>
-  <PageHeader/>
+  <PageHeader :view = "view" />
   <main class = "main-content">  
 Contact content goes here
   </main>

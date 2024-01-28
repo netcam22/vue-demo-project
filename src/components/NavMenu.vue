@@ -39,6 +39,7 @@ const store = useNavItemsStore(appStore);
   max-height: fit-content;
   flex-basis: 1fr;
   box-sizing: border-box;
+  align-self: flex-start;
 
   &::before,
   &::after {

@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import HomeView from '../views/HomeView.vue';
 
 export const useRouterStore = defineStore("router", {
   state: () => ({
@@ -7,7 +6,7 @@ export const useRouterStore = defineStore("router", {
       {
         path: '/',
         name: 'home',
-        component: HomeView
+        component: () => import('../views/HomeView.vue')
       },
       {
         path: '/items',
