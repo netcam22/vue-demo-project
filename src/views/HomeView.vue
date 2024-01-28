@@ -5,7 +5,7 @@ const view = "home";
 
 <template>
   <PageHeader :view = "view" />
-  <main class = "main-content">  
+  <main class = "main-content">
     Home content goes here
   </main>
 </template>
