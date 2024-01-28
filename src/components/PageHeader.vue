@@ -1,0 +1,49 @@
+<script setup>
+import NavMenu from './NavMenu.vue';
+</script>
+
+<template>
+    <header class = "header">
+        <img class = "logo" src="./../assets/logo.png" alt="My Logo">
+        <NavMenu />
+    </header>
+</template>
+
+<style lang="scss" scoped>
+.header {
+    display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 2% 0 20% 0;
+    box-sizing: border-box;
+    min-height: 30vh;
+
+    @include respond-medium {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2% 0 8% 2%;
+    }
+
+    &__logo {
+        width: $logo-width-mobile;
+        flex-basis: $logo-width-mobile;
+        margin: 0 0 10% 0;
+        z-index: 1;
+        
+        @include respond-medium {
+            max-width: $logo-width-tablet;
+            flex-basis: $logo-width-tablet;
+            margin: 0;
+        }
+
+        @include respond-large {
+            max-width: $logo-width-desktop;
+            flex-basis: $logo-width-desktop;
+        }
+    }
+
+}
+</style>
