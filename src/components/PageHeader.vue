@@ -1,10 +1,15 @@
 <script setup>
 import NavMenu from './NavMenu.vue';
+import ImageElement from './ImageElement.vue';
+import { toRefs } from 'vue';
+
+const props = defineProps({view: String})
+const { view } = toRefs(props);
 </script>
 
 <template>
     <header class = "header">
-        <img class = "logo" src="./../assets/logo.png" alt="My Logo">
+        <ImageElement :view="view"/>
         <NavMenu />
     </header>
 </template>
@@ -26,24 +31,5 @@ import NavMenu from './NavMenu.vue';
         align-items: center;
         padding: 2% 0 8% 2%;
     }
-
-    &__logo {
-        width: $logo-width-mobile;
-        flex-basis: $logo-width-mobile;
-        margin: 0 0 10% 0;
-        z-index: 1;
-        
-        @include respond-medium {
-            max-width: $logo-width-tablet;
-            flex-basis: $logo-width-tablet;
-            margin: 0;
-        }
-
-        @include respond-large {
-            max-width: $logo-width-desktop;
-            flex-basis: $logo-width-desktop;
-        }
-    }
-
 }
 </style>
