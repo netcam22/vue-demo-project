@@ -17,19 +17,7 @@ export const useViewSettingsStore = defineStore("viewSettings", {
   getters: {
     getImageSources: (state) => {
       return state.imageSources;
-    },
-    getHomeImageSources: (state) => {
-      return state.imageSources.home;
-    },
-    getItemsImageSources: (state) => {
-      return state.imageSources.items;
-    },
-    getAboutImageSources: (state) => {
-      return state.imageSources.about;
-    },
-    getContactSettings: (state) => {
-      return state.settings.contact;
-    },
+    }
   },
   actions: {
 

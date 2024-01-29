@@ -1,15 +1,27 @@
 <script setup>
 import NavMenu from './NavMenu.vue';
 import ImageElement from './ImageElement.vue';
-import { toRefs } from 'vue';
-
-const props = defineProps({view: String})
-const { view } = toRefs(props);
+//import { toRefs } from 'vue';
+import { useViewSettingsStore } from "@/stores/viewSettings";
+import { appStore } from "../store";
+import { computed} from 'vue';
+const store = useViewSettingsStore(appStore);
+const imageUrls = store.getImageSources;
+const props = defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
+const dynamicImageSource = computed(() =>
+    imageUrls[props.view]
+);
+//const { view } = toRefs(props);
 </script>
 
 <template>
     <header class = "header">
-        <ImageElement :view="view"/>
+        <ImageElement :imageSource="dynamicImageSource"/>
         <NavMenu />
     </header>
 </template>

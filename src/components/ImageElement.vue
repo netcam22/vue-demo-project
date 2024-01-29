@@ -1,22 +1,14 @@
 <script setup>
-import { useViewSettingsStore } from "@/stores/viewSettings";
-import { appStore } from "../store";
-import { computed} from 'vue';
-const store = useViewSettingsStore(appStore);
-const imageUrls = store.getImageSources;
-const props = defineProps({
-    view: {
-    type: String,
+defineProps({
+    imageSource: {
+    type: Image,
     required: true
     }
 })
-const dynamicImageSource = computed(() =>
-    imageUrls[props.view]
-);
 </script>
 
 <template>
-<img class = "logo" :src="dynamicImageSource" alt="My Logo">
+<img class = "logo" :src="imageSource" alt="My Logo">
 </template>
 
 <style lang="scss" scoped>
