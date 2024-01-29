@@ -8,11 +8,20 @@ $cherry: #ef1e24;
 
 $logo-width-mobile: 50%;
 $logo-width-tablet: 15%;
-$logo-width-desktop: 20%;
+$logo-width-desktop: 15%;
 $custom-font: Lucida Calligraphy;
 
-$misdemeanour-colours: ('rudeness': $blueberry, 'lift': $lime, 
-'vegetables': $olive, 'united': $lemon);
+/* Font: Algeria Regular[Font]
+"https://fontsgeek.com/fonts/Algerian-Regular"
+Accessed 28/12/23 */
+@font-face {
+  font-family: "Algeria";
+  src: url("/src/assets/fonts/AlgerianRegular.ttf");
+}
+
+.canvasjs-chart-credit {
+  left: -2000px;
+}
 
 $grey: rgba(0,0,0,0.2);
 $box-shadow: 0 4px 8px 0 $grey;

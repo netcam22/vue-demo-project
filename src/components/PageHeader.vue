@@ -7,6 +7,7 @@ import { appStore } from "../store";
 import { computed} from 'vue';
 const store = useViewSettingsStore(appStore);
 const imageUrls = store.getImageSources;
+const menuStyles = store.getMenuStyles;
 const props = defineProps({
     view: {
     type: String,
@@ -16,13 +17,17 @@ const props = defineProps({
 const dynamicImageSource = computed(() =>
     imageUrls[props.view]
 );
+const dynamicMenuStyle = computed(() =>
+    menuStyles[props.view]
+);
+console.log("D", dynamicMenuStyle);
 //const { view } = toRefs(props);
 </script>
 
 <template>
-    <header class = "header">
+    <header class = "header header--fakelandia">
         <ImageElement v-if="dynamicImageSource" :imageSource="dynamicImageSource"/>
-        <NavMenu />
+        <NavMenu :menuStyle = "dynamicMenuStyle"/>
     </header>
 </template>
 
@@ -35,16 +40,13 @@ const dynamicImageSource = computed(() =>
 	justify-content: flex-end;
     gap: 40vw;
 	flex-wrap: wrap;
-	padding: 3% 0 0 0;
     box-sizing: border-box;
     min-height: 30vh;
-
     @include respond-medium {
         flex-direction: row;
         justify-content: center;
         gap: 0;
         align-items: center;
-        padding: 2% 0 8% 2%;
     }
 }
 </style>
