@@ -11,5 +11,12 @@ const view = "home";
 </template>
 
 <style scoped>
-
+.header {
+    font-family: Lucida Calligraphy;
+    font-weight: 500;
+    padding: 3% 0 0 0;
+    @include respond-medium {
+        padding: 2% 0 7% 2%;
+    }
+  }
 </style>

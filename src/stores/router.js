@@ -14,15 +14,9 @@ export const useRouterStore = defineStore("router", {
         component: () => import('../views/FakelandiaView.vue')
       },
       {
-        path: '/music',
-        name: 'music',
-        component: () => import('../views/MusicView.vue')
-      },
-      
-      {
-        path: '/hhh',
-        name: 'hhh',
-        component: () => import('../views/HhhView.vue')
+        path: '/marsrover',
+        name: 'marsrover',
+        component: () => import('../views/MarsRoverView.vue')
       }
     ]
   }

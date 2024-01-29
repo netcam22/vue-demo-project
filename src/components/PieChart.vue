@@ -1,40 +1,52 @@
 <script>
-
 export default {
-    data() {
+    props: {
+    title: String,
+    subtitle: String,
+    titleColor: String,
+    dataPoints: Array,
+    titleBackground: String,
+    chartType: String,
+    width: String,
+    height: String,
+    fontStyle: String,
+    titleSize: Number,
+    subtitleSize: Number,
+    chartColors: String
+    },
+    data({title, subtitle, titleColor, titleBackground, dataPoints, chartType, 
+        width, height, fontStyle, titleSize, subtitleSize, chartColors}) {
     return {
         options: {
+        colorSet: chartColors,
         zoomEnabled: true,
         animationEnabled: true,
         animationDuration: 2000,	
         title:{
-            text: "Misdemeanours",
-            fontSize: 35,
-            fontColor: "#242a6d",
-            fontFamily: "Courier"
+            text: title,
+            fontSize: titleSize,
+            fontColor: titleColor,
+            backgroundColor: titleBackground,
+            padding: 5,
+            margin: 2,
+            fontFamily: fontStyle
         },
         subtitles: [{
-            text: `Reported on ${Date()}`,
-            backgroundColor: "#f3ec18",
-            fontSize: 18,
-            fontFamily: "Courier",
-            fontColor: "#242a6d",
-            padding: 7
+            text: subtitle,
+            fontSize: subtitleSize,
+            fontFamily: fontStyle,
+            fontColor: titleColor,
+            padding: 5,
+            margin: 2
         }],
         data: [{
-            color: "#FFE066",
-            type: "pie",
-            dataPoints: [
-            { label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
-            { label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
-            { label: "Speaking In a Lift", y: 2, color: "#242a6d" },
-            { label: "Supporting Manchester United",  y: 3, color: "#ef1e24"},
-        ]
+            type: chartType,
+            dataPoints: dataPoints
         }]
         },
         styleOptions: {
-        width: "100%",
-        height: "30vw"
+        width: width,
+        height: height
         }
     }
     }
