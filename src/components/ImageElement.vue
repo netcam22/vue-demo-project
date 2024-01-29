@@ -21,7 +21,7 @@ export default {
 </script>
 
 <template>
-<img class = "logo" :src="dynamicImageSource" alt="My Logo">
+<img class = "logo" :src="`/src/assets/${dynamicImageSource}`" alt="My Logo">
 </template>
 
 <style lang="scss" scoped>
