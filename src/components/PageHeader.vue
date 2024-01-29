@@ -21,7 +21,7 @@ const dynamicImageSource = computed(() =>
 
 <template>
     <header class = "header">
-        <ImageElement :imageSource="dynamicImageSource"/>
+        <ImageElement v-if="dynamicImageSource" :imageSource="dynamicImageSource"/>
         <NavMenu />
     </header>
 </template>
@@ -31,15 +31,18 @@ const dynamicImageSource = computed(() =>
     display: flex;
 	flex-direction: row;
 	align-items: flex-start;
-	justify-content: space-around;
+    align-content: flex-start;
+	justify-content: flex-end;
+    gap: 40vw;
 	flex-wrap: wrap;
-	padding: 2% 0 20% 0;
+	padding: 3% 0 0 0;
     box-sizing: border-box;
     min-height: 30vh;
 
     @include respond-medium {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: center;
+        gap: 0;
         align-items: center;
         padding: 2% 0 8% 2%;
     }

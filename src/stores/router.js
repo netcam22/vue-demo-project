@@ -9,19 +9,20 @@ export const useRouterStore = defineStore("router", {
         component: () => import('../views/HomeView.vue')
       },
       {
-        path: '/items',
-        name: 'items',
-        component: () => import('../views/ItemsView.vue')
+        path: '/fakelandia',
+        name: 'fakelandia',
+        component: () => import('../views/FakelandiaView.vue')
       },
       {
-        path: '/about',
-        name: 'about',
-        component: () => import('../views/AboutView.vue')
+        path: '/music',
+        name: 'music',
+        component: () => import('../views/MusicView.vue')
       },
+      
       {
-        path: '/contact',
-        name: 'contact',
-        component: () => import('../views/ContactView.vue')
+        path: '/hhh',
+        name: 'hhh',
+        component: () => import('../views/HhhView.vue')
       }
     ]
   }

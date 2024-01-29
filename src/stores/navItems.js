@@ -4,9 +4,9 @@ export const useNavItemsStore = defineStore("navItems", {
   state: () => ({
     menu: [
       {id: 1, name: 'home', title: "Home"},
-      {id: 2, name: 'items', title: "Items"},
-      {id: 3, name: 'about', title: "About"},
-      {id: 4, name: 'contact', title: "Contact"}
+      {id: 2, name: 'fakelandia', title: "Fakelandia"},
+      {id: 3, name: 'music', title: "Music"},
+      {id: 4, name: 'hhh', title: "Harmomise"}
     ]
   }
   ),

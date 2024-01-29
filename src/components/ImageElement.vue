@@ -13,15 +13,15 @@ defineProps({
 
 <style lang="scss" scoped>
 .logo {
-        width: $logo-width-mobile;
-        flex-basis: $logo-width-mobile;
-        margin: 0 0 10% 0;
+        height: 20vw;
+        margin: 0 auto;
         z-index: 1;
         
         @include respond-medium {
             max-width: $logo-width-tablet;
+            height: auto;
             flex-basis: $logo-width-tablet;
-            margin: 0;
+            margin: 0 auto;
         }
 
         @include respond-large {

@@ -1,12 +1,12 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
-const view = "about";
+const view = "hhh";
 </script>
 
 <template>
   <PageHeader :view = "view" />
   <main class = "main-content">  
-About content goes here
+Harmonise content goes here
   </main>
 </template>
 
