@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
     imageSource: {
-    type: Image,
+    type: String,
     required: true
     }
 })
