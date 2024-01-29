@@ -1,23 +1,18 @@
-<script>
+<script setup>
 import { useViewSettingsStore } from "@/stores/viewSettings";
 import { appStore } from "../store";
-import { ref } from 'vue';
+import { computed} from 'vue';
 const store = useViewSettingsStore(appStore);
 const imageUrls = store.getImageSources;
-export default {
-    props: {view: String},
-    data(props) {
-        return {
-            imageSources: imageUrls,
-            currentImageIndex: ref(props.view),
-        };
-    },
-    computed: {
-            dynamicImageSource() {
-                return this.imageSources[this.currentImageIndex];
-            }
-        }
-}
+const props = defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
+const dynamicImageSource = computed(() =>
+    imageUrls[props.view]
+);
 </script>
 
 <template>
