@@ -1,12 +1,12 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
-const view = "contact";
+const view = "music";
 </script>
 
 <template>
   <PageHeader :view = "view" />
   <main class = "main-content">  
-Contact content goes here
+Music content goes here
   </main>
 </template>
 

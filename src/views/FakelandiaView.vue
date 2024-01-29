@@ -1,12 +1,12 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
-const view = "items";
+const view = "fakelandia";
 </script>
 
 <template>
   <PageHeader :view = "view" />
   <main class = "main-content">  
-Items content goes here
+Fakelandia content goes here
   </main>
 </template>
 

@@ -48,7 +48,7 @@ const store = useNavItemsStore(appStore);
   }
 
   @include respond-medium {
-    flex-basis: 60%;
+    flex-basis: 50%;
   }
 
   @include respond-large {
@@ -76,21 +76,22 @@ const store = useNavItemsStore(appStore);
 
     @include respond-medium {
       background-color: transparent;
-      width: 100%;
+      width: 80vw;
       left: 0;
       padding: 0;
       position: relative;
-      flex-wrap: nowrap;
-      justify-content: flex-end;
+      flex-wrap: wrap;
       align-content: center;
-      align-items: flex-end;
       transform: none;
       transition: none;
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: center;
     }
 
     @include respond-large {
-      flex-direction: row;
-      align-items: baseline;
+      flex-wrap: nowrap;
+      width: 70vw;
     }
 
     &--transition {
@@ -153,6 +154,11 @@ const store = useNavItemsStore(appStore);
 
     &--style {
       padding: 0.5rem 2rem 0.5rem 2rem;
+      @include respond-medium {
+        border-bottom: none;
+        background-color: transparent;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+      }
 
       &:first-child:hover {
         border-top-right-radius: 20px;
@@ -169,6 +175,13 @@ const store = useNavItemsStore(appStore);
         @include respond-small {
           font-size: 2rem;
         }
+        @include respond-medium {
+          color: $dark-blue;
+          font-size: 1.2rem;
+        }
+        @include respond-large {
+          font-size: 1.6rem;
+        }
       }
 
       & a:hover {
@@ -180,21 +193,12 @@ const store = useNavItemsStore(appStore);
       }
 
       @include respond-medium {
-        border-bottom: none;
-        background-color: transparent;
-        padding: 0.5rem 2rem 0.5rem 2rem;
-
         &:last-child {
           padding-bottom: 0.5rem;
         }
 
         &:hover {
           background-color: transparent;
-        }
-
-        & a {
-          color: $dark-blue;
-          font-size: 1.6rem;
         }
 
         & a:hover {
@@ -225,6 +229,7 @@ const store = useNavItemsStore(appStore);
     display: block;
     width: 33px;
     height: 4px;
+    margin-right: 2rem;
     margin-bottom: 5px;
     position: relative;
     border-radius: 3px;
@@ -257,8 +262,8 @@ const store = useNavItemsStore(appStore);
     width: 3rem;
     height: 2.5rem;
     position: absolute;
-    top: 0.5rem;
-    left: -0.5rem;
+    top: 0;
+    left: -1rem;
     cursor: pointer;
     opacity: 0;
     z-index: 2;

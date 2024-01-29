@@ -1,16 +1,16 @@
 import { defineStore } from 'pinia';
 import fakelandiaLogo from "./../assets/fakelandiaLogo.png";
-import HHHlogo from "./../assets/logoHHH.png";
+import hhhLogo from "./../assets/hhhLogo.png";
 import iteduLogo from "./../assets/itedulogo.png";
-import smallLogo from "./../assets/logoSmall.png";
+import musicLogo from "./../assets/musicLogo.png";
 
 export const useViewSettingsStore = defineStore("viewSettings", {
   state: () => ({
     imageSources: {
-      home: fakelandiaLogo,
-      about: HHHlogo,
-      contact: iteduLogo,
-      items: smallLogo,
+      home: undefined,
+      fakelandia: fakelandiaLogo,
+      music: musicLogo,
+      hhh: hhhLogo
       },
   }
   ),
