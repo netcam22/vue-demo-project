@@ -3,15 +3,15 @@ import PageHeader from '@/components/PageHeader.vue';
 import DataChart from '@/components/DataChart.vue';
 const view = "marsrover";
 import {CHART_DATA} from './../data/chartData';
-const {title, subtitle, titleColor, titleBackground, dataPoints, chartType, 
-        width, height, fontStyle, titleSize, subtitleSize, chartColors} = CHART_DATA[view].chart;
+const {title, subtitle, titleColor, titleBackground, chartType, width, height, 
+        fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints}
+        = CHART_DATA[view].chart;
 </script>
 
 <template>
   <PageHeader :view = "view"/>
   <main class = "main-content main-content--marsrover">  
 <DataChart 
-  :chartColors = "chartColors"
   :title = "title" 
   :subtitle = "subtitle"
   :titleColor = "titleColor" 
@@ -23,11 +23,16 @@ const {title, subtitle, titleColor, titleBackground, dataPoints, chartType,
   :fontStyle = "fontStyle"
   :titleSize = "titleSize"
   :subtitleSize = "subtitleSize"
+  :chartColors = "chartColors"
+  :colorBackground = "colorBackground"
   />
   </main>
 </template>
 
 <style lang="scss" scoped>
+.main-content {
+  background-color: lighten(#efb948, 35%);
+}
 .header {
     background-image: url("/src/assets/images/space.png");
     background-repeat: repeat-x;
