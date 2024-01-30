@@ -14,14 +14,14 @@ defineProps({
 <style lang="scss" scoped>
 .logo {
         height: 20vw;
-        margin: 0 auto;
+        margin: 3% auto 0 auto;
         z-index: 1;
         
         @include respond-medium {
             max-width: $logo-width-tablet;
             height: auto;
             flex-basis: $logo-width-tablet;
-            margin: 0 auto;
+            margin: 0;
         }
 
         @include respond-large {

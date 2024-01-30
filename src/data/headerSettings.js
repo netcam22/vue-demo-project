@@ -3,7 +3,7 @@ import roverLogo from "./../assets/images/mars.png";
 export const HEADER_SETTINGS = {
     home: {
         imageSource: undefined,
-        menuStyle: "navbar__item--dark",
+        menuStyle: "navbar__item--home",
         mobileBackground: "lime"
     },
     fakelandia: {

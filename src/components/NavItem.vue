@@ -69,10 +69,6 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
         padding: 0.5rem 2rem 0.5rem 2rem;
         }
 
-        &:first-child:hover {
-            border-top-right-radius: 20px;
-        }
-
         &:last-child:hover {
             border-bottom-right-radius: 20px;
         }
@@ -126,6 +122,14 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
             color: darken($cherry, 10%);
             @include respond-medium {
                 color: $dark-blue;
+            }
+        }
+    }
+    &--home {
+        & a {
+            color: $dark-grey-blue;
+            @include respond-medium {
+                color: $dark-strong-blue;
             }
         }
     }

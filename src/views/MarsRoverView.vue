@@ -38,7 +38,7 @@ const {title, subtitle, titleColor, titleBackground, chartType, width, height,
     background-repeat: repeat-x;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
-    padding: 2% 0 2% 2%;
+    padding: 0;
     @include respond-medium {
         padding: 2% 0 2% 2%;
     }

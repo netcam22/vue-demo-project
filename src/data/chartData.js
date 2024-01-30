@@ -20,7 +20,7 @@ export const CHART_DATA = {
             width: "100%",
             height: "30wv",
             fontStyle: "Algeria",
-            titleSize: 35,
+            titleSize: 25,
             subtitleSize: 18,
             chartColors: "",
             colorBackground: "#fdfcda",

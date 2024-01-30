@@ -32,6 +32,7 @@ const {title, subtitle, titleColor, titleBackground, chartType, width, height,
 
 .main-content {
   background-color: lighten($lemon, 40%);
+  font-family: "Algeria";
 }
 .header {
     background-color: lighten($blueberry, 42%);
@@ -40,7 +41,7 @@ const {title, subtitle, titleColor, titleBackground, chartType, width, height,
     background-position: bottom;
     font-family: "Algeria";
     font-weight: 500;
-    padding: 3% 0 0 0;
+    padding: 0;
     @include respond-medium {
         padding: 2% 0 7% 2%;
     }
