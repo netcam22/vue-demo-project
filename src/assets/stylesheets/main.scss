@@ -6,6 +6,9 @@ $lemon: #f3ec18;
 $olive: #8ead4f;
 $cherry: #ef1e24;
 $violet: #aeb1d7;
+$mid-blue: rgb(203, 226, 245);
+$dark-strong-blue: rgb(85, 125, 165);
+$dark-grey-blue: rgb(76, 99, 117);
 
 $logo-width-mobile: 50%;
 $logo-width-tablet: 15%;
@@ -18,6 +21,13 @@ Accessed 28/12/23 */
 @font-face {
   font-family: "Algeria";
   src: url("/src/assets/fonts/AlgerianRegular.ttf");
+}
+
+/* Font: BenchNine-Bold[Font]
+*/
+@font-face {
+  font-family: "BenchNine-Bold";
+  src: url("/src/assets/fonts/BenchNine-Bold.ttf");
 }
 
 *,

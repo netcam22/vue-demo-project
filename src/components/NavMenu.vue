@@ -63,11 +63,11 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
   }
 
   @include respond-medium {
-    flex-basis: 50%;
+    flex-basis: 70vw;
   }
 
   @include respond-large {
-    flex-basis: 75%;
+    flex-basis: 70vw;
   }
 
   &__list {
@@ -85,13 +85,14 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
     z-index: 0;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
-    width: 100vw;
+    width: 110vw;
     transform: translate(-100vw, 0);
     transition: none;
 
     @include respond-medium {
       background-color: transparent;
       width: 80vw;
+      margin: 0 0 0 -5vw;
       left: 0;
       padding: 0;
       position: relative;
@@ -106,7 +107,7 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
 
     @include respond-large {
       flex-wrap: nowrap;
-      width: 70vw;
+      width: 80vw;
     }
 
     &--transition {
@@ -115,7 +116,6 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
 
     &--style {
       border-bottom-right-radius: 20px;
-      border-top-right-radius: 20px;
       box-shadow: $box-shadow;
 
       @include respond-medium {
@@ -150,6 +150,7 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
     position: relative;
     z-index: 1;
     margin: 0;
+    width: 10vw;
     padding: 1rem 0;
     cursor: pointer;
     -webkit-user-select: none;

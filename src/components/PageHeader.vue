@@ -50,7 +50,6 @@ const dynamicMenuStyle = computed(() =>
         justify-content: center;
         gap: 0;
         align-items: center;
-        padding: 2% 0 7% 2%;
     }
 }
 </style>
