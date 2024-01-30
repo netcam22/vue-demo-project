@@ -14,7 +14,7 @@ const view = "home";
 .header {
     font-family: Lucida Calligraphy;
     font-weight: 500;
-    padding: 3% 0 0 0;
+    padding: 0;
     @include respond-medium {
         padding: 2% 0 7% 2%;
     }

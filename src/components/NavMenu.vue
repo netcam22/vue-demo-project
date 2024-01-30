@@ -1,14 +1,23 @@
 <script setup>
-defineProps({
+import { useNavItemsStore } from "@/stores/navItems";
+import { appStore } from "../store.js";
+const store = useNavItemsStore(appStore);
+import NavItem from "./NavItem.vue";
+import { toRefs } from 'vue';
+
+const props = defineProps({
     menuStyle: {
+    type: String,
+    required: true
+    },
+    mobileBackground: {
     type: String,
     required: true
     }
 })
-import NavItem from "./NavItem.vue";
-import { useNavItemsStore } from "@/stores/navItems";
-import { appStore } from "../store.js";
-const store = useNavItemsStore(appStore);
+
+const { mobileBackground } = toRefs(props);
+const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${mobileBackground.value}`;
 </script>
 
 <template>
@@ -23,7 +32,7 @@ const store = useNavItemsStore(appStore);
       <span className="navbar__burger navbar__burger--color"></span>
       <span className="navbar__burger navbar__burger--color"></span>
       <span className="navbar__burger navbar__burger--color"></span>
-      <ul className="navbar__list navbar__list--style navbar__list--transition">
+      <ul :className="menuClass">
         <NavItem
           v-for="item in store.getMenu"
           :key="item.id"
@@ -71,7 +80,7 @@ const store = useNavItemsStore(appStore);
     list-style: none;
     flex-direction: column;
     position: absolute;
-    margin: 0;
+    margin: 0 auto;
     top: 0;
     left: -100vw;
     z-index: 0;
@@ -106,16 +115,33 @@ const store = useNavItemsStore(appStore);
     }
 
     &--style {
-      background-color: $lemon;
       border-bottom-right-radius: 20px;
       border-top-right-radius: 20px;
       box-shadow: $box-shadow;
 
       @include respond-medium {
-        background-color: transparent;
         border: none;
         line-height: 3rem;
         box-shadow: none;
+      }
+    }
+
+    &--lemon {
+      background-color: $lemon;
+      @include respond-medium {
+        background-color: transparent;
+      }
+    }
+    &--violet {
+      background-color: $violet;
+      @include respond-medium {
+        background-color: transparent;
+      }
+    }
+    &--lime {
+      background-color: $lime;
+      @include respond-medium {
+        background-color: transparent;
       }
     }
   }
@@ -180,6 +206,9 @@ const store = useNavItemsStore(appStore);
     opacity: 0;
     z-index: 2;
     -webkit-touch-callout: none;
+    @include respond-medium {
+      display: none;
+    }
 
     &:checked ~ .navbar__burger {
       opacity: 1;

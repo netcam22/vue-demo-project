@@ -114,7 +114,7 @@ const menuItemClass = `navbar__item navbar__item--style ${menuStyle.value}`;
             }
         }
     }
-    &--light {
+    &--marsrover {
         & a {
             color: darken($cherry, 10%);
             @include respond-medium {
@@ -122,7 +122,7 @@ const menuItemClass = `navbar__item navbar__item--style ${menuStyle.value}`;
             }
         }
     }
-    &--dark {
+    &--fakelandia {
         & a {
             color: darken($cherry, 10%);
             @include respond-medium {

@@ -1,33 +1,36 @@
 <script setup>
 import NavMenu from './NavMenu.vue';
 import ImageElement from './ImageElement.vue';
-//import { toRefs } from 'vue';
+import {HEADER_SETTINGS} from './../data/headerSettings';
+/*
 import { useViewSettingsStore } from "@/stores/viewSettings";
 import { appStore } from "../store";
 import { computed} from 'vue';
 const store = useViewSettingsStore(appStore);
 const imageUrls = store.getImageSources;
 const menuStyles = store.getMenuStyles;
+*/
 const props = defineProps({
     view: {
     type: String,
     required: true
     }
 })
+const {imageSource, menuStyle, mobileBackground} = HEADER_SETTINGS[props.view];
+/*
 const dynamicImageSource = computed(() =>
     imageUrls[props.view]
 );
 const dynamicMenuStyle = computed(() =>
     menuStyles[props.view]
 );
-console.log("D", dynamicMenuStyle);
-//const { view } = toRefs(props);
+*/
 </script>
 
 <template>
     <header class = "header header--fakelandia">
-        <ImageElement v-if="dynamicImageSource" :imageSource="dynamicImageSource"/>
-        <NavMenu :menuStyle = "dynamicMenuStyle"/>
+        <ImageElement v-if="imageSource" :imageSource="imageSource"/>
+        <NavMenu :menuStyle = "menuStyle" :mobileBackground = "mobileBackground"/>
     </header>
 </template>
 
