@@ -1,5 +1,5 @@
 <script setup>
-import { toRefs } from 'vue';
+//import { toRefs } from 'vue';
 const props = defineProps({
     name: {
     type: String,
@@ -14,8 +14,7 @@ const props = defineProps({
     required: true
     }
 })
-const { menuStyle } = toRefs(props);
-const menuItemClass = `navbar__item navbar__item--style ${menuStyle.value}`;
+const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
 </script>
 
 <template>

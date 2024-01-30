@@ -3,7 +3,7 @@ import { useNavItemsStore } from "@/stores/navItems";
 import { appStore } from "../store.js";
 const store = useNavItemsStore(appStore);
 import NavItem from "./NavItem.vue";
-import { toRefs } from 'vue';
+//import { toRefs } from 'vue';
 
 const props = defineProps({
     menuStyle: {
@@ -16,8 +16,7 @@ const props = defineProps({
     }
 })
 
-const { mobileBackground } = toRefs(props);
-const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${mobileBackground.value}`;
+const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${props.mobileBackground}`;
 </script>
 
 <template>
