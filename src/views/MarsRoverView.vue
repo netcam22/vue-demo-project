@@ -11,8 +11,8 @@ const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const lastSunday = new Date(today.setDate(today.getDate()-today.getDay())).toLocaleDateString("en-GB");
 const subtitle = `Mars Rover Journeys on week ending Sunday ${lastSunday}`;
-const titleColor = "#242a6d";
-const titleBackground = "#aeb1d7";
+const headingColor = "#242a6d";
+const backgroundColor = "#aeb1d7";
 const dataPoints = [
             { label: "Monday",  y: 6},
             { label: "Tuesday", y: 4},
@@ -31,14 +31,14 @@ const subtitleSize = 18;
 </script>
 
 <template>
-  <PageHeader :view = "view" />
+  <PageHeader :view = "view" :backgroundColor = "backgroundColor"/>
   <main class = "main-content main-content--marsrover">  
 <PieChart 
   :chartColors = "chartColors"
   :title = "title" 
   :subtitle = "subtitle"
-  :titleColor = "titleColor" 
-  :titleBackground = "titleBackground"
+  :titleColor = "headingColor" 
+  :titleBackground = "backgroundColor"
   :dataPoints = "dataPoints"
   :chartType = "chartType"
   :width = "width"
@@ -57,5 +57,8 @@ const subtitleSize = 18;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
     padding: 2% 0 2% 2%;
+    @include respond-medium {
+        padding: 2% 0 2% 2%;
+    }
 }
 </style>

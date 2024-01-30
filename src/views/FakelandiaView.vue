@@ -6,8 +6,8 @@ const view = "fakelandia";
 const title = "Misdemeanours";
 const date = new Date().toLocaleDateString("en-GB");
 const subtitle = `Reported on ${date}`;
-const titleColor = "#242a6d";
-const titleBackground = "#f3ec18";
+const headingColor = "#242a6d";
+const backgroundColor = "#f3ec18";
 const dataPoints = [
             { label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
             { label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
@@ -23,14 +23,14 @@ const subtitleSize = 18;
 </script>
 
 <template>
-  <PageHeader :view = "view" />
+  <PageHeader :view = "view" :backgroundColor = "backgroundColor"/>
   <main class = "main-content main-content--fakelandia">  
 <PieChart 
   :chartColors = "chartColors"
   :title = "title" 
   :subtitle = "subtitle"
-  :titleColor = "titleColor" 
-  :titleBackground = "titleBackground"
+  :titleColor = "headingColor" 
+  :titleBackground = "backgroundColor"
   :dataPoints = "dataPoints"
   :chartType = "chartType"
   :width = "width"

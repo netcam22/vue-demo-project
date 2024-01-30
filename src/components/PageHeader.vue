@@ -1,7 +1,6 @@
 <script setup>
 import NavMenu from './NavMenu.vue';
 import ImageElement from './ImageElement.vue';
-//import { toRefs } from 'vue';
 import { useViewSettingsStore } from "@/stores/viewSettings";
 import { appStore } from "../store";
 import { computed} from 'vue';
@@ -12,6 +11,10 @@ const props = defineProps({
     view: {
     type: String,
     required: true
+    },
+    backgroundColor: {
+    type: String,
+    required: true
     }
 })
 const dynamicImageSource = computed(() =>
@@ -20,14 +23,12 @@ const dynamicImageSource = computed(() =>
 const dynamicMenuStyle = computed(() =>
     menuStyles[props.view]
 );
-console.log("D", dynamicMenuStyle);
-//const { view } = toRefs(props);
 </script>
 
 <template>
     <header class = "header header--fakelandia">
         <ImageElement v-if="dynamicImageSource" :imageSource="dynamicImageSource"/>
-        <NavMenu :menuStyle = "dynamicMenuStyle"/>
+        <NavMenu :menuStyle = "dynamicMenuStyle" :mobileMenuColor = "backgroundColor"/>
     </header>
 </template>
 
