@@ -12,17 +12,18 @@ export const CHART_DATA = {
     },
     fakelandia: {
         chart: {
-            chartColors: "",
             title: "Misdemeanours",
             subtitle: `Reported on ${now.toLocaleDateString("en-GB")}`,
-            headingColor: "#242a6d",
-            backgroundColor: "#f3ec18",
+            titleColor: "#242a6d",
+            titleBackground: "#f3ec18",
             chartType: "pie",
             width: "100%",
             height: "30wv",
             fontStyle: "Algeria",
             titleSize: 35,
             subtitleSize: 18,
+            chartColors: "",
+            colorBackground: "#fdfcda",
             dataPoints: [
                 { label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
                 { label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
@@ -33,17 +34,18 @@ export const CHART_DATA = {
     },
     marsrover: {
         chart: {
-            chartColors: "marsRoverColors",
             title: "Mars Rover",
             subtitle: `Mars Rover Journeys on week ending Sunday ${lastSunday}`,
-            headingColor: "#242a6d",
-            backgroundColor: "#aeb1d7",
+            titleColor: "#242a6d",
+            titleBackground: "#aeb1d7",
             chartType: "column",
             width: "100%",
             height: "30wv",
             fontStyle: "Courier",
             titleSize: 35,
             subtitleSize: 18,
+            chartColors: "marsRoverColors",
+            colorBackground: "#fdf8ec",
             dataPoints: [
                 { label: "Monday",  y: 6},
                 { label: "Tuesday", y: 4},

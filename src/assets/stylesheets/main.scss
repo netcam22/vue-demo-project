@@ -20,8 +20,11 @@ Accessed 28/12/23 */
   src: url("/src/assets/fonts/AlgerianRegular.ttf");
 }
 
-.canvasjs-chart-credit {
-  left: -2000px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 
 $grey: rgba(0,0,0,0.2);
@@ -64,4 +67,50 @@ $box-shadow: 0 4px 8px 0 $grey;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .canvasjs-chart-credit {
+    left: -2000px;
+  }
+
+  .mode-button {
+    flex-basis: 22%;
+    padding: 0.5%;
+    margin: 1% 1% 0 0;
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .mode-button--white {
+    background-color: var(--white);
+    color: var(--red-purple);
+    border: var(--dark) solid 1px;
+  }
+  
+  .mode-button--red:hover {
+    background-color: var(--mid-blue);
+    color: var(--white);
+    border: var(--mid-blue) solid 1px;
+  }
+  
+  .mode-button--red {
+    background-color: var(--red-purple);
+    color: var(--white);
+    border: var(--red-purple) solid 1px;
+  }
+  
+  .mode-button--white:hover {
+    background-color: var(--white);
+    color: var(--mid-blue);
+    border: var(--dark) solid 1px;
+  }
+  
+  @media (min-width: 768px) {
+    .mode-button {
+      flex-basis: 10%;
+      margin: 0.5% 0.5% 0 0;
+      font-size: 1.1rem;
+    } 
   }

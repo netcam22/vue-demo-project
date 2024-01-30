@@ -12,16 +12,18 @@ export default {
     fontStyle: String,
     titleSize: Number,
     subtitleSize: Number,
-    chartColors: String
+    chartColors: String,
+    colorBackground: String
     },
     data({title, subtitle, titleColor, titleBackground, dataPoints, chartType, 
-        width, height, fontStyle, titleSize, subtitleSize, chartColors}) {
+        width, height, fontStyle, titleSize, subtitleSize, chartColors, colorBackground}) {
     return {
         options: {
         colorSet: chartColors,
         zoomEnabled: true,
         animationEnabled: true,
-        animationDuration: 2000,	
+        animationDuration: 2000,
+        backgroundColor: colorBackground,	
         title:{
             text: title,
             fontSize: titleSize,
