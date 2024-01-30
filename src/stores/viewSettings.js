@@ -1,27 +1,17 @@
 import { defineStore } from 'pinia';
-import fakelandiaLogo from "./../assets/images/fakelandiaLogo.png";
-import roverLogo from "./../assets/images/mars.png";
 
-export const useViewSettingsStore = defineStore("viewSettings", {
+export const useStuffStore = defineStore("pageStuff", {
   state: () => ({
-    imageSources: {
-      home: undefined,
-      fakelandia: fakelandiaLogo,
-      marsrover: roverLogo
-      },
-      menuStyles: {
-        home: "navbar__item--dark",
-        fakelandia: "navbar__item--dark",
-        marsrover: "navbar__item--light"
+      stuff: {
+        home: "stuff",
+        fakelandia: "stuff",
+        marsrover: "stuff"
       },
   }
   ),
   getters: {
-    getImageSources: (state) => {
-      return state.imageSources;
-    },
-    getMenuStyles: (state) => {
-      return state.menuStyles;
+    getStuff: (state) => {
+      return state.stuff;
     }
   },
   actions: {
