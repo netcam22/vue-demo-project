@@ -12,7 +12,7 @@ export const CHART_DATA = {
     },
     fakelandia: {
         chart: {
-            chartColors: [],
+            chartColors: "",
             title: "Misdemeanours",
             subtitle: `Reported on ${now.toLocaleDateString("en-GB")}`,
             headingColor: "#242a6d",

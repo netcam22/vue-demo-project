@@ -8,7 +8,7 @@ const {title, subtitle, titleColor, titleBackground, dataPoints, chartType,
 </script>
 
 <template>
-  <PageHeader :view = "view" :backgroundColor = "titleBackground"/>
+  <PageHeader :view = "view"/>
   <main class = "main-content main-content--marsrover">  
 <DataChart 
   :chartColors = "chartColors"

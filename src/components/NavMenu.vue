@@ -1,21 +1,23 @@
 <script setup>
+import { useNavItemsStore } from "@/stores/navItems";
+import { appStore } from "../store.js";
+const store = useNavItemsStore(appStore);
+import NavItem from "./NavItem.vue";
 import { toRefs } from 'vue';
+
 const props = defineProps({
     menuStyle: {
     type: String,
     required: true
     },
-    mobileMenuColor: {
+    mobileBackground: {
     type: String,
     required: true
     }
 })
-import NavItem from "./NavItem.vue";
-import { useNavItemsStore } from "@/stores/navItems";
-import { appStore } from "../store.js";
-const store = useNavItemsStore(appStore);
-const { mobileMenuColor } = toRefs(props);
-const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${mobileMenuColor.value}`;
+
+const { mobileBackground } = toRefs(props);
+const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${mobileBackground.value}`;
 </script>
 
 <template>
@@ -132,6 +134,12 @@ const menuClass = `navbar__list navbar__list--style navbar__list--transition nav
     }
     &--violet {
       background-color: $violet;
+      @include respond-medium {
+        background-color: transparent;
+      }
+    }
+    &--lime {
+      background-color: $lime;
       @include respond-medium {
         background-color: transparent;
       }

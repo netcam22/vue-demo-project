@@ -7,7 +7,7 @@ const {title, subtitle, titleColor, titleBackground, dataPoints, chartType,
         width, height, fontStyle, titleSize, subtitleSize, chartColors} = CHART_DATA[view].chart;
 </script>
 <template>
-  <PageHeader :view = "view" :backgroundColor = "titleBackground"/>
+  <PageHeader :view = "view"/>
   <main class = "main-content main-content--fakelandia">  
 <DataChart 
   :chartColors = "chartColors"

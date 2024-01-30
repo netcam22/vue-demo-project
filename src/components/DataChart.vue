@@ -12,7 +12,7 @@ export default {
     fontStyle: String,
     titleSize: Number,
     subtitleSize: Number,
-    chartColors: []
+    chartColors: String
     },
     data({title, subtitle, titleColor, titleBackground, dataPoints, chartType, 
         width, height, fontStyle, titleSize, subtitleSize, chartColors}) {
