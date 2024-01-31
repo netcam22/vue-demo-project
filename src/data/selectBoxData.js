@@ -17,6 +17,6 @@ export const SELECT_FORM_DATA = {
         {value: "lift", text: "Speaking in a Lift 🗣"},
         {value: "united", text: "Supporting Manchester United 😈"}]}
     ],
-    buttonClass: "select-box__button select-box__button--red", 
+    buttonColor: "red", 
     buttonText: "Confess"
 }
