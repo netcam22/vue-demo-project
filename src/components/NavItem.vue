@@ -1,6 +1,5 @@
 <script setup>
-//import { toRefs } from 'vue';
-const props = defineProps({
+defineProps({
     name: {
     type: String,
     required: true
@@ -9,16 +8,15 @@ const props = defineProps({
     type: String,
     required: true
     },
-    menuStyle: {
+    navTextColor: {
     type: String,
     required: true
     }
 })
-const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
 </script>
 
 <template>
-<li class = "navbar__item navbar__item--style" :class="`navbar__item--${menuStyle}`">
+<li class = "navbar__item navbar__item--style" :class="`navbar__item--${navTextColor}`">
 <RouterLink :to="{name: name}">{{title}}</RouterLink></li>
 </template>
 
@@ -120,7 +118,7 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
             }
         }
     }
-    &--grey-blue-strong-blue {
+    &--grey-strong-blue {
         & a {
             color: $dark-grey-blue;
             @include respond-medium {

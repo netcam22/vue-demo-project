@@ -3,10 +3,9 @@ import { useNavItemsStore } from "@/stores/navItems";
 import { appStore } from "../store.js";
 const store = useNavItemsStore(appStore);
 import NavItem from "./NavItem.vue";
-//import { toRefs } from 'vue';
 
 defineProps({
-    menuStyle: {
+  navTextColor: {
     type: String,
     required: true
     },
@@ -36,7 +35,7 @@ defineProps({
           :key="item.id"
           :name="item.name"
           :title="item.title"
-          :menuStyle="menuStyle"
+          :navTextColor="navTextColor"
         />
       </ul>
     </div>
