@@ -1,30 +1,16 @@
-<script>
-export default {
-    props: {
-    title: String,
-    subtitle: String,
-    titleColor: String,
-    dataPoints: Array,
-    titleBackground: String,
-    chartType: String,
-    width: String,
-    height: String,
-    fontStyle: String,
-    titleSize: Number,
-    subtitleSize: Number,
-    chartColors: String,
-    colorBackground: String
-    },
-    data({title, subtitle, titleColor, titleBackground, dataPoints, chartType, 
-        width, height, fontStyle, titleSize, subtitleSize, chartColors, colorBackground}) {
-    return {
-        options: {
-        colorSet: chartColors,
-        zoomEnabled: true,
-        animationEnabled: true,
-        animationDuration: 2000,
-        backgroundColor: colorBackground,	
-        title:{
+<script setup>
+import {CHART_DATA} from './../data/chartData';
+const props = defineProps({view: String});
+const {title, subtitle, titleColor, titleBackground, chartType, width, height, 
+        fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints}
+        = CHART_DATA[props.view].chart;
+const options = {
+            colorSet: chartColors,
+            zoomEnabled: true,
+            animationEnabled: true,
+            animationDuration: 2000,
+            backgroundColor: colorBackground,	
+            title:{
             text: title,
             fontSize: titleSize,
             fontColor: titleColor,
@@ -32,7 +18,7 @@ export default {
             padding: 5,
             margin: 2,
             fontFamily: fontStyle
-        },
+            },
         subtitles: [{
             text: subtitle,
             fontSize: subtitleSize,
@@ -45,14 +31,8 @@ export default {
             type: chartType,
             dataPoints: dataPoints
         }]
-        },
-        styleOptions: {
-        width: width,
-        height: height
-        }
-    }
-    }
-}
+        };
+const styleOptions = {width: width, height: height}
 </script>
 <template>
 <CanvasJSChart :options="options" :styles="styleOptions"/>
