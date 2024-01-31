@@ -10,6 +10,19 @@ $fire: #f48428;
 $mid-blue: rgb(203, 226, 245);
 $dark-strong-blue: rgb(85, 125, 165);
 $dark-grey-blue: rgb(76, 99, 117);
+:root {
+  --strong-orange: rgb(243, 126, 0);
+  --med-strong-orange: rgb(249, 168, 81);
+  --med-orange: rgb(247, 178, 105);
+  --mid-orange: rgb(250, 213, 156);
+  --strong-blue: rgb(2, 125, 208);
+  --med-blue: rgb(152, 198, 235);
+  --light-blue: rgb(224, 237, 249);
+  --mid-grey-blue: rgb(136, 178, 211);
+ 
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+}
 
 $logo-width-mobile: 50%;
 $logo-width-tablet: 15%;
