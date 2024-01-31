@@ -38,12 +38,6 @@ defineProps({
     text-align: left;
   }
 
-  &--volunteers {
-    background-image: url("./../assets/images/houses.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
   &--thirty {
     min-height: 30vh;
   }
@@ -53,8 +47,8 @@ defineProps({
   }
 
   &--blue {
-    background-color: $blueberry;
-    color: $coconut;
+    background-color: lighten($blueberry, 20%);
+    color: $dark-blue;
   }
 
   &--half {

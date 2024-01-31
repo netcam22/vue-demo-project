@@ -1,15 +1,15 @@
 
 export const SELECT_BOX_DATA = {
-    ariaLabel: "confess-to-a misdemeanour",
+    ariaLabel: "confess-to-a-misdemeanour",
     heading: "Confess to a Misdemeanour",
-    text: "It's very difficult to catch people committing misdemeanours so we appreciate it when citizens confess to us directly.."
+    text: "It's very difficult to catch people committing misdemeanours so why not confess to us directly.."
 };
 export const SELECT_FORM_DATA = {
     formId: "i-form",
     formColor: "blue",
     selectBoxes: [
         {id: 1,
-        label: "Misdemeanour:",
+        label: "...and watch the pie chart react",
         selectId: "misdemeanour", 
         options: [
         {value: "rudeness", text: "Mild Public Rudeness 🤪"},
