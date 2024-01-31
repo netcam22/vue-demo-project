@@ -94,7 +94,8 @@ $box-shadow: 0 4px 8px 0 $grey;
   }
 
   .canvasjs-chart-credit {
-    left: -2000px;
+    left: -3000px;
+    z-index: -3000;
   }
 
   .mode-button {

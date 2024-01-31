@@ -11,10 +11,6 @@ defineProps({
   paragraph: {
     type: Object,
     required: false
-  },
-  button: {
-    type: Object,
-    required: false
   }
 })
 </script>
@@ -25,7 +21,7 @@ defineProps({
       <p v-if="paragraph" :class="paragraph.class">
         {{paragraph.text}}
       </p>
-      <button v-if="button" :class="button.class" type="button">{{button.text}}</button>
+      <slot></slot>
   </section>
 </template>
 
