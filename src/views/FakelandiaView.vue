@@ -6,9 +6,9 @@ const view = "fakelandia";
 <template>
   <PageHeader :view = "view"/>
   <main class = "main-content main-content--fakelandia">
-    <slot-chart>
+    <slot-chart-block>
       <DataChart :view = "view"/>
-    </slot-chart>  
+    </slot-chart-block>
   </main>
 </template>
 
@@ -24,7 +24,7 @@ const view = "fakelandia";
   min-height: 65vh;
   font-size: 1rem;
   padding: 0;
-  @include respond-medium {
+  @include respond-large {
     grid-template-columns: 1fr 1fr;
   }
   height: fit-content;
