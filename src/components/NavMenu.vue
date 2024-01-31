@@ -3,10 +3,9 @@ import { useNavItemsStore } from "@/stores/navItems";
 import { appStore } from "../store.js";
 const store = useNavItemsStore(appStore);
 import NavItem from "./NavItem.vue";
-//import { toRefs } from 'vue';
 
-const props = defineProps({
-    menuStyle: {
+defineProps({
+  navTextColor: {
     type: String,
     required: true
     },
@@ -15,29 +14,28 @@ const props = defineProps({
     required: true
     }
 })
-
-const menuClass = `navbar__list navbar__list--style navbar__list--transition navbar__list--${props.mobileBackground}`;
 </script>
 
 <template>
-  <nav className="navbar navbar--style">
-    <div className="navbar__element">
+  <nav class="navbar navbar--style">
+    <div class="navbar__element">
       <input
         aria-labelledby="toggle"
-        className="navbar__checkbox"
+        class="navbar__checkbox"
         type="checkbox"
       />
-      <span id="toggle" className="navbar__sr-only">Toggle mobile menu</span>
-      <span className="navbar__burger navbar__burger--color"></span>
-      <span className="navbar__burger navbar__burger--color"></span>
-      <span className="navbar__burger navbar__burger--color"></span>
-      <ul :className="menuClass">
+      <span id="toggle" class="navbar__sr-only">Toggle mobile menu</span>
+      <span class="navbar__burger navbar__burger--color"></span>
+      <span class="navbar__burger navbar__burger--color"></span>
+      <span class="navbar__burger navbar__burger--color"></span>
+      <ul class="navbar__list navbar__list--style navbar__list--transition"
+      :class="`navbar__list--${mobileBackground}`">
         <NavItem
           v-for="item in store.getMenu"
           :key="item.id"
           :name="item.name"
           :title="item.title"
-          :menuStyle="menuStyle"
+          :navTextColor="navTextColor"
         />
       </ul>
     </div>

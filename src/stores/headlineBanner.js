@@ -2,13 +2,13 @@ import { defineStore } from 'pinia';
 
 export const useHeadlineBannerStore = defineStore("headlineBanner", {
 state: () => ({
-    section: {class: "headline headline--blue headline--thirty headline--half", aria: "helping-people"},
+    section: {class: "headline headline--blue headline--thirty headline--half", aria: "misdemeanours"},
     heading: {class: "headline__heading headline__heading--box", 
-    text: "We are a social change charity, helping people to improve their lives through digital."},
+    text: "Welcome to the home of the Justice Department of Fakelandia."},
     paragraph: {class: "headline__text headline__text--box", 
-    text: "We tackle the most pressing issues of our time, working with partners in thousands of communities across the UK and further afield."},
+    text: "Here you can view a chart representing misdemeanours committed by our citizens today."},
     button: {class: "headline__button headline__button--box", text: "Learn more about us"},
-    image: {class: "image-box image-box--charity-people image-box--thirty"}
+    image: {class: "image-box"}
 }),
 getters: {
     getSection: (state) => {

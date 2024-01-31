@@ -1,6 +1,5 @@
 <script setup>
-//import { toRefs } from 'vue';
-const props = defineProps({
+defineProps({
     name: {
     type: String,
     required: true
@@ -9,16 +8,16 @@ const props = defineProps({
     type: String,
     required: true
     },
-    menuStyle: {
+    navTextColor: {
     type: String,
     required: true
     }
 })
-const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
 </script>
 
 <template>
-<li :class = "menuItemClass" ><RouterLink :to="{name: name}">{{title}}</RouterLink></li>
+<li class = "navbar__item navbar__item--style" :class="`navbar__item--${navTextColor}`">
+<RouterLink :to="{name: name}">{{title}}</RouterLink></li>
 </template>
 
 <style lang="scss" scoped>
@@ -74,8 +73,9 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
         }
 
         & a {
-                font-size: 1.6rem;
-                line-height: 3rem;
+            color: $dark-grey-blue;
+            font-size: 1.6rem;
+            line-height: 3rem;
             @include respond-small {
                 font-size: 2rem;
             }
@@ -88,36 +88,29 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
         }
 
         & a:hover {
-            color: $dark-blue;
+            color: $cherry;
         }
 
         & a:active {
-            color: $dark-blue;
+            color: $cherry;
         }
 
         @include respond-medium {
             &:last-child {
                 padding-bottom: 0.5rem;
             }
-
-            &:hover {
-                background-color: transparent;
-                }
-
-            & a:hover {
-                color: $cherry;
-            }
         }
     }
-    &--marsrover {
+    
+    &--fire-lemon {
         & a {
-            color: darken($cherry, 10%);
+            color: darken($fire, 40%);
             @include respond-medium {
                 color: lighten($lemon, 10%);
             }
         }
     }
-    &--fakelandia {
+    &--cherry-dark-blue {
         & a {
             color: darken($cherry, 10%);
             @include respond-medium {
@@ -125,7 +118,7 @@ const menuItemClass = `navbar__item navbar__item--style ${props.menuStyle}`;
             }
         }
     }
-    &--home {
+    &--grey-strong-blue {
         & a {
             color: $dark-grey-blue;
             @include respond-medium {
