@@ -3,17 +3,17 @@ import roverLogo from "./../assets/images/mars.png";
 export const HEADER_SETTINGS = {
     home: {
         imageSource: undefined,
-        menuStyle: "navbar__item--home",
+        menuStyle: "grey-blue-strong-blue",
         mobileBackground: "lime"
     },
     fakelandia: {
         imageSource: fakelandiaLogo,
-        menuStyle: "navbar__item--fakelandia",
+        menuStyle: "cherry-dark-blue",
         mobileBackground: "lemon"
     },
     marsrover: {
         imageSource: roverLogo,
-        menuStyle: "navbar__item--marsrover",
+        menuStyle: "fire-lemon",
         mobileBackground: "violet"
     }
 }
