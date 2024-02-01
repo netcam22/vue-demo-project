@@ -4,8 +4,9 @@ import { ref } from 'vue';
 import {useDataTallyStore} from '@/stores/dataTally';
 import { appStore } from '../store.js';
 const store = useDataTallyStore(appStore);
+import {CHART_DATA} from './../data/chartData';
 
-defineProps({
+const props = defineProps({
     label: {
     type: String,
     required: true
@@ -22,10 +23,11 @@ defineProps({
 const selected = ref();
 
 function handleOptionChange(event) {
-    console.log("view value", event.target.id, selected.value);
-    console.log("tallybefore", store.getTypeOfTally(event.target.id));
-    store.addToTally(event.target.id, selected.value);
-    console.log("tallyafter", store.getTypeOfTally(event.target.id));
+    store.$patch(event.target.id, selected.value);
+    const {getDataPoints} = useDataTallyStore(appStore);
+    const {dataPoints} = CHART_DATA[event.target.id].chart;
+    const data = getDataPoints(dataPoints, event.target.id);
+    console.log("data in select", data);
 }
 </script>
 
