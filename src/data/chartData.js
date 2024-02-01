@@ -38,7 +38,8 @@ export const CHART_DATA = {
             ],
             countValues: MISDEMEANOUR_COUNT_VALUES,
             DATA_TYPE: MISDEMEANOURS,
-            noOfValues: 10
+            noOfValues: 10,
+            animationDuration: 1000
         }
     },
     marsrover: {
@@ -66,7 +67,8 @@ export const CHART_DATA = {
             ],
             countValues: DAY_COUNT_VALUES,
             DATA_TYPE: DAYS,
-            noOfValues: 100
+            noOfValues: 100,
+            animationDuration: 2000
         }
     }
 }
