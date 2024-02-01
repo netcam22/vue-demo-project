@@ -1,7 +1,11 @@
 <script setup>
 import SelectOption from './SelectOption.vue';
 import { ref } from 'vue';
-const props = defineProps({
+import {useDataTallyStore} from '@/stores/dataTally';
+import { appStore } from '../store.js';
+const store = useDataTallyStore(appStore);
+
+defineProps({
     label: {
     type: String,
     required: true
@@ -17,8 +21,11 @@ const props = defineProps({
 })
 const selected = ref();
 
-function handleOptionChange() {
-    console.log(props.selectId, selected.value);
+function handleOptionChange(event) {
+    console.log("view value", event.target.id, selected.value);
+    console.log("tallybefore", store.getTypeOfTally(event.target.id));
+    store.addToTally(event.target.id, selected.value)
+    console.log("tallyafter", store.getTypeOfTally(event.target.id));
 }
 </script>
 

@@ -5,8 +5,8 @@ import useCountData from "./../composables/useCountData";
 import useChartDataPoints from './../composables/useChartDataPoints';
 import {useDataTallyStore} from '@/stores/dataTally';
 import { appStore } from '../store.js';
-const store = useDataTallyStore(appStore);
 
+const store = useDataTallyStore(appStore);
 const props = defineProps({view: String});
 
 const {title, subtitle, titleColor, titleBackground, chartType, width, height, 
@@ -14,11 +14,8 @@ const {title, subtitle, titleColor, titleBackground, chartType, width, height,
         countValues, DATA_TYPE, noOfValues, animationDuration} = CHART_DATA[props.view].chart;
 
 const count = useCountData(DATA_TYPE, useGetChartData(DATA_TYPE, noOfValues), countValues);
-console.log("count", count);
-console.log("store", store.getMisdemeanours);
-store.setMisdemeanours(count);
-console.log("store", store.getMisdemeanours);
-const updatedDataPoints = useChartDataPoints(dataPoints, store.getMisdemeanours);
+store.setTally(props.view, count);
+const updatedDataPoints = useChartDataPoints(dataPoints, store.getTypeOfTally(props.view));
 
 const options = {
             colorSet: chartColors,
