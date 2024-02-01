@@ -11,6 +11,19 @@ const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const lastSunday = new Date(today.setDate(today.getDate()-today.getDay())).toLocaleDateString("en-GB");
 
+export const CHART_VALUES = {
+    fakelandia: {
+        countValues: MISDEMEANOUR_COUNT_VALUES,
+        dataType: MISDEMEANOURS,
+        noOfValues: 10,
+    },
+    marsrover: {
+        countValues: DAY_COUNT_VALUES,
+        dataType: DAYS,
+        noOfValues: 100,
+    }
+}
+
 export const CHART_DATA = {
     fakelandia: {
         chart: {
@@ -32,9 +45,6 @@ export const CHART_DATA = {
                 { name: "lift", label: "Speaking In a Lift", color: "#242a6d" },
                 { name: "united", label: "Supporting Manchester United", color: "#ef1e24"},
             ],
-            countValues: MISDEMEANOUR_COUNT_VALUES,
-            DATA_TYPE: MISDEMEANOURS,
-            noOfValues: 10,
             animationDuration: 1000
         }
     },
@@ -61,9 +71,6 @@ export const CHART_DATA = {
                 {name: "saturday", label: "Saturday"},
                 {name: "sunday", label: "Sunday"},
             ],
-            countValues: DAY_COUNT_VALUES,
-            DATA_TYPE: DAYS,
-            noOfValues: 100,
             animationDuration: 2000
         }
     }
