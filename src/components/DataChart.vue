@@ -1,6 +1,11 @@
 <script setup>
 import {CHART_DATA} from './../data/chartData';
-import {useChartDataPoints} from './../composables/useChartDataPoints';
+import useGetChartData from "./../composables/useGetChartData";
+import useCountData from "./../composables/useCountData";
+import useChartDataPoints from './../composables/useChartDataPoints';
+import {useDataTallyStore} from '@/stores/dataTally';
+import { appStore } from '../store.js';
+const store = useDataTallyStore(appStore);
 
 const props = defineProps({view: String});
 
@@ -8,7 +13,12 @@ const {title, subtitle, titleColor, titleBackground, chartType, width, height,
         fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints,
         countValues, DATA_TYPE, noOfValues, animationDuration} = CHART_DATA[props.view].chart;
 
-const updatedDataPoints = useChartDataPoints(dataPoints, countValues, DATA_TYPE, noOfValues);
+const count = useCountData(DATA_TYPE, useGetChartData(DATA_TYPE, noOfValues), countValues);
+console.log("count", count);
+console.log("store", store.getMisdemeanours);
+store.setMisdemeanours(count);
+console.log("store", store.getMisdemeanours);
+const updatedDataPoints = useChartDataPoints(dataPoints, store.getMisdemeanours);
 
 const options = {
             colorSet: chartColors,

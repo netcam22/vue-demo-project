@@ -1,7 +1,7 @@
 <script setup>
 import SelectOption from './SelectOption.vue';
 import { ref } from 'vue';
-defineProps({
+const props = defineProps({
     label: {
     type: String,
     required: true
@@ -18,7 +18,7 @@ defineProps({
 const selected = ref();
 
 function handleOptionChange() {
-    console.log(selected.value);
+    console.log(props.selectId, selected.value);
 }
 </script>
 
