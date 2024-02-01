@@ -1,28 +1,38 @@
 import { defineStore } from 'pinia';
-import { MISDEMEANOUR_COUNT_VALUES, DAY_COUNT_VALUES } from '@/data/chartData';
+import { CHART_VALUES } from '@/data/chartData';
+import useCountData from "./../composables/useCountData";
+import useGetChartData from "./../composables/useGetChartData";
+import useChartDataPoints from './../composables/useChartDataPoints';
 
 export const useDataTallyStore = defineStore("dataTally", () => {
 
     const countTally = {
-      fakelandia: MISDEMEANOUR_COUNT_VALUES,
-      marsrover: DAY_COUNT_VALUES,
+      fakelandia: {...CHART_VALUES["fakelandia"].countValues},
+      marsrover: {...CHART_VALUES["marsrover"].countValues},
+    }
+
+    function setDataPoints(dataPoints, view) {
+      setDataCount(view);
+      return useChartDataPoints(dataPoints, countTally[view]);
+    }
+
+    function setDataCount(view) {
+      const {countValues, dataType, noOfValues} = CHART_VALUES[view];
+      countTally[view] = useCountData(dataType, useGetChartData(dataType, noOfValues), countValues);
     }
 
     function getTypeOfTally(dataType) {
       return countTally[dataType];
     };
 
-    function setTally(dataType, data) {
-      countTally[dataType] = data;
-    };
-
     function addToTally(dataType, kind) {
-      countTally[dataType] = {...countTally[dataType], [kind]:countTally[kind]+=1}
+      countTally[dataType] = {...countTally[dataType], [kind]:countTally[dataType][kind]+=1}
     };
   
     return {
+      setDataPoints,
+      setDataCount,
       getTypeOfTally,
-      setTally,
       addToTally
     }
 })
