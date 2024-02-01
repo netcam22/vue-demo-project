@@ -5,6 +5,7 @@ import useCountData from "./../composables/useCountData";
 import useChartDataPoints from './../composables/useChartDataPoints';
 import {useDataTallyStore} from '@/stores/dataTally';
 import { appStore } from '../store.js';
+import { storeToRefs } from 'pinia';
 
 const store = useDataTallyStore(appStore);
 const props = defineProps({view: String});
