@@ -3,19 +3,15 @@ CanvasJS.addColorSet("marsRoverColors", ["#aeb1d7", "#7177ba", "#343c9c",
 "#f48428", "#efb948", "#f4ce7f", "#f9e3b6"]);
 
 export const MISDEMEANOURS = ['rudeness','vegetables','lift','united',];
-export const MISDEMEANOUR_COUNT_VALUES = {rudeness: 0, vegetables: 0, lift: 0, united: 0};
+const MISDEMEANOUR_COUNT_VALUES = MISDEMEANOURS.reduce((acc, item) => {return {...acc, [item]: 0}}, {});
 export const DAYS = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
-export const DAY_COUNT_VALUES = 
-{monday:0, tuesday:0, wednesday:0, thursday:0, friday:0, saturday:0, sunday:0};
+export const DAY_COUNT_VALUES = DAYS.reduce((acc, item) => {return {...acc, [item]: 0}}, {});
 
 const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const lastSunday = new Date(today.setDate(today.getDate()-today.getDay())).toLocaleDateString("en-GB");
 
 export const CHART_DATA = {
-    home: {
-
-    },
     fakelandia: {
         chart: {
             title: "Misdemeanours",
