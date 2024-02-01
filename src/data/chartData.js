@@ -2,7 +2,11 @@ import * as CanvasJS from '@canvasjs/charts';
 CanvasJS.addColorSet("marsRoverColors", ["#aeb1d7", "#7177ba", "#343c9c", 
 "#f48428", "#efb948", "#f4ce7f", "#f9e3b6"]);
 
-import { MISDEMEANOURS, MISDEMEANOUR_COUNT_VALUES } from './selectBoxData';
+export const MISDEMEANOURS = ['rudeness','vegetables','lift','united',];
+export const MISDEMEANOUR_COUNT_VALUES = {rudeness: 0, vegetables: 0, lift: 0, united: 0};
+export const DAYS = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
+export const DAY_COUNT_VALUES = 
+{monday:0, tuesday:0, wednesday:0, thursday:0, friday:0, saturday:0, sunday:0};
 
 const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -27,13 +31,14 @@ export const CHART_DATA = {
             chartColors: "",
             colorBackground: "#fdfcda",
             dataPoints: [
-                { name: "rudeness", label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
-                { name: "vegetables", label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
-                { name: "lift", label: "Speaking In a Lift", y: 2, color: "#242a6d" },
-                { name: "united", label: "Supporting Manchester United",  y: 3, color: "#ef1e24"},
+                { name: "rudeness", label: "Mild Public Rudeness", color: "#28ade5"},
+                { name: "vegetables", label: "Not Eating Your Vegetables", color: "#8ead4f"},
+                { name: "lift", label: "Speaking In a Lift", color: "#242a6d" },
+                { name: "united", label: "Supporting Manchester United", color: "#ef1e24"},
             ],
             countValues: MISDEMEANOUR_COUNT_VALUES,
-            DATA_TYPE: MISDEMEANOURS
+            DATA_TYPE: MISDEMEANOURS,
+            noOfValues: 10
         }
     },
     marsrover: {
@@ -51,14 +56,17 @@ export const CHART_DATA = {
             chartColors: "marsRoverColors",
             colorBackground: "#fdf8ec",
             dataPoints: [
-                { label: "Monday",  y: 6},
-                { label: "Tuesday", y: 4},
-                { label: "Wednesday", y: 2},
-                { label: "Thursday",  y: 3},
-                { label: "Friday", y: 5},
-                { label: "Saturday", y: 2},
-                { label: "Sunday",  y: 1},
+                {name:"monday", label: "Monday"},
+                {name: "tuesday",label: "Tuesday"},
+                {name: "wednesday", label: "Wednesday"},
+                {name: "thursday", label: "Thursday"},
+                {name: "friday", label: "Friday"},
+                {name: "saturday", label: "Saturday"},
+                {name: "sunday", label: "Sunday"},
             ],
+            countValues: DAY_COUNT_VALUES,
+            DATA_TYPE: DAYS,
+            noOfValues: 100
         }
     }
 }
