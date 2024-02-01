@@ -6,16 +6,15 @@ const props = defineProps({view: String});
 
 const {title, subtitle, titleColor, titleBackground, chartType, width, height, 
         fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints,
-        countValues, DATA_TYPE} = CHART_DATA[props.view].chart;
+        countValues, DATA_TYPE, noOfValues, animationDuration} = CHART_DATA[props.view].chart;
 
-const updatedDataPoints = 
-dataPoints[0].name? useChartDataPoints(dataPoints, countValues, DATA_TYPE): dataPoints;
+const updatedDataPoints = useChartDataPoints(dataPoints, countValues, DATA_TYPE, noOfValues);
 
 const options = {
             colorSet: chartColors,
             zoomEnabled: true,
             animationEnabled: true,
-            animationDuration: 2000,
+            animationDuration: animationDuration,
             backgroundColor: colorBackground,	
             title:{
             text: title,

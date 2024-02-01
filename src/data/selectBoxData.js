@@ -1,12 +1,3 @@
-export const MISDEMEANOURS = [
-	'rudeness',
-	'vegetables',
-	'lift',
-	'united',
-];
-
-export const MISDEMEANOUR_COUNT_VALUES = {rudeness: 0, vegetables: 0, lift: 0, united: 0};
-
 export const SELECT_DATA =  {
     fakelandia: {
         selectBoxData: {
