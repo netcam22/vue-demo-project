@@ -1,7 +1,13 @@
 <script setup>
 import SelectInput from './SelectInput.vue';
-import { SELECT_FORM_DATA } from '@/data/selectBoxData';
-const {formColor, formId, selectBoxes, buttonColor, buttonText} = SELECT_FORM_DATA;
+import { SELECT_DATA } from '@/data/selectBoxData';
+const props = defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
+const {formColor, formId, selectBoxes, buttonColor, buttonText} = SELECT_DATA[props.view].selectFormData;
 </script>
 
 <template>

@@ -2,6 +2,8 @@ import * as CanvasJS from '@canvasjs/charts';
 CanvasJS.addColorSet("marsRoverColors", ["#aeb1d7", "#7177ba", "#343c9c", 
 "#f48428", "#efb948", "#f4ce7f", "#f9e3b6"]);
 
+import { MISDEMEANOURS, MISDEMEANOUR_COUNT_VALUES } from './selectBoxData';
+
 const now = new Date();
 const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 const lastSunday = new Date(today.setDate(today.getDate()-today.getDay())).toLocaleDateString("en-GB");
@@ -25,11 +27,13 @@ export const CHART_DATA = {
             chartColors: "",
             colorBackground: "#fdfcda",
             dataPoints: [
-                { label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
-                { label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
-                { label: "Speaking In a Lift", y: 2, color: "#242a6d" },
-                { label: "Supporting Manchester United",  y: 3, color: "#ef1e24"},
+                { name: "rudeness", label: "Mild Public Rudeness",  y: 1, color: "#28ade5"},
+                { name: "vegetables", label: "Not Eating Your Vegetables", y: 4, color: "#8ead4f"},
+                { name: "lift", label: "Speaking In a Lift", y: 2, color: "#242a6d" },
+                { name: "united", label: "Supporting Manchester United",  y: 3, color: "#ef1e24"},
             ],
+            countValues: MISDEMEANOUR_COUNT_VALUES,
+            DATA_TYPE: MISDEMEANOURS
         }
     },
     marsrover: {

@@ -1,7 +1,13 @@
 <script setup>
-import { SELECT_BOX_DATA } from '@/data/selectBoxData';
-const {ariaLabel, heading, text} = SELECT_BOX_DATA;
+import { SELECT_DATA } from '@/data/selectBoxData';
 import SelectForm from './SelectForm.vue';
+const props = defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
+const {ariaLabel, heading, text} = SELECT_DATA[props.view].selectBoxData;
 </script>
 
 <template>
@@ -12,7 +18,7 @@ import SelectForm from './SelectForm.vue';
             {{text}}
         </p>
 
-        <SelectForm/>
+        <SelectForm :view = "view"/>
 
         </section>
 </template>
