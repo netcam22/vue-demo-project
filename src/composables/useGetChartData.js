@@ -1,4 +1,4 @@
-export const useGetChartData = (DATA_KIND, number) => {
+const useGetChartData = (DATA_KIND, number) => {
     
 	function choose(arr){
 		if (!arr) arr = [];

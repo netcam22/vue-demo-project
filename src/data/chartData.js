@@ -3,7 +3,7 @@ CanvasJS.addColorSet("marsRoverColors", ["#aeb1d7", "#7177ba", "#343c9c",
 "#f48428", "#efb948", "#f4ce7f", "#f9e3b6"]);
 
 export const MISDEMEANOURS = ['rudeness','vegetables','lift','united',];
-const MISDEMEANOUR_COUNT_VALUES = MISDEMEANOURS.reduce((acc, item) => {return {...acc, [item]: 0}}, {});
+export const MISDEMEANOUR_COUNT_VALUES = MISDEMEANOURS.reduce((acc, item) => {return {...acc, [item]: 0}}, {});
 export const DAYS = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday'];
 export const DAY_COUNT_VALUES = DAYS.reduce((acc, item) => {return {...acc, [item]: 0}}, {});
 

@@ -12,12 +12,10 @@ const {formColor, formId, selectBoxes, buttonColor, buttonText} = SELECT_DATA[pr
 
 <template>
           <form class="select-box__form" :class="`select-box__form--${formColor}`" :id="formId">
-            <SelectInput 
+            <SelectInput
             v-for="(item) in selectBoxes"
               :key="item.id"
-              :labelClass="item.labelClass"
               :label="item.label"
-              :selectClass="item.selectClass" 
               :selectId="item.selectId" 
               :options="item.options"
           />

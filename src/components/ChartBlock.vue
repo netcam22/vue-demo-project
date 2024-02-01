@@ -1,14 +1,16 @@
 <script setup>
 import { useHeadlineBannerStore } from '@/stores/headlineBanner';
 import { appStore } from '../store.js';
-const store = useHeadlineBannerStore(appStore);
 import SelectBox from './SelectBox.vue';
+const store = useHeadlineBannerStore(appStore);
+
 defineProps({
     view: {
     type: String,
     required: true
     }
 })
+
 </script>
 
 <template>
