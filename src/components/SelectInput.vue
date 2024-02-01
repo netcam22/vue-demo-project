@@ -1,15 +1,8 @@
 <script setup>
 import SelectOption from './SelectOption.vue';
+import { ref } from 'vue';
 defineProps({
-    labelClass: {
-    type: String,
-    required: true
-    },
     label: {
-    type: String,
-    required: true
-    },
-    selectClass: {
     type: String,
     required: true
     },
@@ -22,11 +15,16 @@ defineProps({
     required: true
     }
 })
+const selected = ref();
+
+function handleOptionChange() {
+    console.log(selected.value);
+}
 </script>
 
 <template>
     <label class="select-box__label" :for="selectId">{{ label }}</label>
-        <select class="select-box__input" :id="selectId">
+        <select class="select-box__input" :id="selectId" v-model="selected" @change="handleOptionChange">
             <SelectOption
             v-for="(option) in options"
             :key="option.value"
