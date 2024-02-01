@@ -1,38 +1,39 @@
 import { defineStore } from 'pinia';
-import { CHART_VALUES } from '@/data/chartData';
+import { CHART_VALUES} from '@/data/chartData';
 import useCountData from "./../composables/useCountData";
 import useGetChartData from "./../composables/useGetChartData";
-import useChartDataPoints from './../composables/useChartDataPoints';
+import useChartDataPoints from '@/composables/useChartDataPoints';
+
+const initialValues = (view) => {
+  const {countValues, dataType, noOfValues} = CHART_VALUES[view];
+  return useCountData(dataType, useGetChartData(dataType, noOfValues), countValues);
+}
+const fakelandiaValues = initialValues("fakelandia");
+const marsroverValues = initialValues("marsrover");
 
 export const useDataTallyStore = defineStore("dataTally", () => {
 
     const countTally = {
-      fakelandia: {...CHART_VALUES["fakelandia"].countValues},
-      marsrover: {...CHART_VALUES["marsrover"].countValues},
+      fakelandia: fakelandiaValues,
+      marsrover: marsroverValues
     }
 
-    function setDataPoints(dataPoints, view) {
-      setDataCount(view);
+    function getDataPoints(dataPoints, view) {
       return useChartDataPoints(dataPoints, countTally[view]);
     }
 
-    function setDataCount(view) {
-      const {countValues, dataType, noOfValues} = CHART_VALUES[view];
-      countTally[view] = useCountData(dataType, useGetChartData(dataType, noOfValues), countValues);
-    }
-
-    function getTypeOfTally(dataType) {
+    function $subscribe(dataType) {
       return countTally[dataType];
     };
 
-    function addToTally(dataType, kind) {
+    function $patch(dataType, kind) {
       countTally[dataType] = {...countTally[dataType], [kind]:countTally[dataType][kind]+=1}
     };
   
     return {
-      setDataPoints,
-      setDataCount,
-      getTypeOfTally,
-      addToTally
+      getDataPoints,
+      countTally,
+      $subscribe,
+      $patch
     }
 })
