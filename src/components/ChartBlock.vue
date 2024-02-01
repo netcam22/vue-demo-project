@@ -3,6 +3,12 @@ import { useHeadlineBannerStore } from '@/stores/headlineBanner';
 import { appStore } from '../store.js';
 const store = useHeadlineBannerStore(appStore);
 import SelectBox from './SelectBox.vue';
+defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
 </script>
 
 <template>
@@ -10,7 +16,8 @@ import SelectBox from './SelectBox.vue';
     :section="store.getSection"
     :heading="store.getHeading"
     :paragraph="store.getParagraph">
-    <SelectBox/>
+
+    <SelectBox :view = "view"/>
 </slot-headline-block>
 <div class = "chart-box">
     <slot></slot>

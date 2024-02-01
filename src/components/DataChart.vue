@@ -1,9 +1,16 @@
 <script setup>
 import {CHART_DATA} from './../data/chartData';
+import {useChartDataPoints} from './../composables/useChartDataPoints';
+
 const props = defineProps({view: String});
+
 const {title, subtitle, titleColor, titleBackground, chartType, width, height, 
-        fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints}
-        = CHART_DATA[props.view].chart;
+        fontStyle, titleSize, subtitleSize, chartColors, colorBackground, dataPoints,
+        countValues, DATA_TYPE} = CHART_DATA[props.view].chart;
+
+const updatedDataPoints = 
+dataPoints[0].name? useChartDataPoints(dataPoints, countValues, DATA_TYPE): dataPoints;
+
 const options = {
             colorSet: chartColors,
             zoomEnabled: true,
@@ -29,14 +36,12 @@ const options = {
         }],
         data: [{
             type: chartType,
-            dataPoints: dataPoints
+            dataPoints: updatedDataPoints
         }]
         };
 const styleOptions = {width: width, height: height}
 </script>
+
 <template>
 <CanvasJSChart :options="options" :styles="styleOptions"/>
 </template>
-
-<style lang="scss" scoped>
-</style>

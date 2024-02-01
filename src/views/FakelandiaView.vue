@@ -6,7 +6,7 @@ const view = "fakelandia";
 <template>
   <PageHeader :view = "view"/>
   <main class = "main-content main-content--fakelandia">
-    <slot-chart-block>
+    <slot-chart-block :view = "view">
       <DataChart :view = "view"/>
     </slot-chart-block>
   </main>
