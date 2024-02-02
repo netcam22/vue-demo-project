@@ -4,7 +4,7 @@ export const HEADER_SETTINGS = {
     home: {
         imageSource: undefined,
         navTextColor: "grey-strong-blue",
-        mobileBackground: "lime"
+        mobileBackground: "light-blue"
     },
     fakelandia: {
         imageSource: fakelandiaLogo,
