@@ -135,8 +135,8 @@ defineProps({
         background-color: transparent;
       }
     }
-    &--lime {
-      background-color: $lime;
+    &--light-blue {
+      background-color: lighten($blueberry, 30%);
       @include respond-medium {
         background-color: transparent;
       }

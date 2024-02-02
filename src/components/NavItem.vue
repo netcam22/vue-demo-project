@@ -31,7 +31,7 @@ defineProps({
     transition: background-color 0.3s ease;
 
     @include respond-medium {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         padding: 0;
         background-color: transparent;
     }
@@ -106,7 +106,7 @@ defineProps({
         & a {
             color: darken($fire, 40%);
             @include respond-medium {
-                color: lighten($lemon, 10%);
+                color: lighten($lemon, 20%);
             }
         }
     }
