@@ -1,13 +1,13 @@
 <script setup>
-import { useHeadlineBannerStore } from '@/stores/headlineBanner';
 import { appStore } from '../store.js';
 import { ref } from 'vue';
+import { usePageHeadlineStore } from '@/stores/pageHeadline';
 import {useDataTallyStore} from '@/stores/dataTally';
 import SelectBox from './../components/SelectBox.vue';
 import DataChart from '../components/DataChart.vue';
 
 const chartDataStore = useDataTallyStore(appStore);
-const headlineBannerStore = useHeadlineBannerStore(appStore);
+const headlineStore = usePageHeadlineStore(appStore);
 
 defineProps({
     view: {
@@ -17,10 +17,10 @@ defineProps({
 })
 
 const componentKey = ref(0);
-
 const forceRender = () => {
     componentKey.value += 1;
 };
+
 function handleOptionSubmit(event) {
     event.preventDefault();
     chartDataStore.$patch(event.target.id, chartDataStore.selected[event.target.id]);
@@ -30,12 +30,14 @@ function handleOptionSubmit(event) {
 
 <template>
 <slot-headline-block
-    :section="headlineBannerStore.getSection"
-    :heading="headlineBannerStore.getHeading"
-    :paragraph="headlineBannerStore.getParagraph">
+    :view="view"
+    :section="headlineStore.getSection(view)"
+    :heading="headlineStore.getHeading(view)"
+    :paragraph="headlineStore.getParagraph(view)"
+    :button="headlineStore.getButton(view)">
     <SelectBox :view="view" :handleOptionSubmit="handleOptionSubmit"/>
 </slot-headline-block>
-<div class = "chart-box">
+<div :class = "headlineStore.getDiv(view).class">
     <DataChart :view = "view" :key="componentKey"/>
 </div>
 </template>

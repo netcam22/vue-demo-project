@@ -1,17 +1,25 @@
 <script setup>
-import { useHeadlineBannerStore } from '@/stores/headlineBanner';
 import { appStore } from '../store.js';
-const store = useHeadlineBannerStore(appStore);
+import { usePageHeadlineStore } from '@/stores/pageHeadline';
 import HeadlineBlock from './HeadlineBlock.vue';
+const headlineStore = usePageHeadlineStore(appStore);
+
+defineProps({
+    view: {
+    type: String,
+    required: true
+    }
+})
 </script>
 
 <template>
-<div :class = "store.getImage.class"></div>
+<div v-if="headlineStore.getDiv(view)!=='' " :class = "headlineStore.getDiv(view)"></div>
 <HeadlineBlock
-    :section="store.getSection"
-    :heading="store.getHeading"
-    :paragraph="store.getParagraph"
-    :button="store.getButton"
+    :view="view"
+    :section="headlineStore.getSection(view)"
+    :heading="headlineStore.getHeading(view)"
+    :paragraph="headlineStore.getParagraph(view)"
+    :button="headlineStore.getButton(view)"
 />
 </template>
 
@@ -27,11 +35,6 @@ import HeadlineBlock from './HeadlineBlock.vue';
         flex-basis: 50%;
     }
 
-    &--headline-image {
-    background-image: url("./../assets/images/houses.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    }
     &--thirty {
         min-height: 30vh;
     }
