@@ -1,6 +1,7 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
 import DataChart from '@/components/DataChart.vue';
+import PageFooter from '@/components/PageFooter.vue';
 const view = "marsrover";
 </script>
 
@@ -9,6 +10,7 @@ const view = "marsrover";
   <main class = "main-content main-content--marsrover">  
     <DataChart :view = "view"/>
   </main>
+  <PageFooter/>
 </template>
 
 <style lang="scss" scoped>
@@ -26,5 +28,13 @@ const view = "marsrover";
     @include respond-medium {
         padding: 2% 0 2% 2%;
     }
+}
+.footer {
+    background-image: url("/src/assets/images/space.png");
+    background-repeat: repeat-x;
+    color: lighten($lemon, 25%);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 </style>

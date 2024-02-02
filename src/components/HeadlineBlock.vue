@@ -26,7 +26,7 @@ defineProps({
         {{paragraph.text}}
       </p>
       <a v-if="button.link !=='' " target = "_blank" :href="button.link">
-      <button v-if="button.text !=='' " :class="button.class">
+      <button v-if="button.text !=='' " class = "headline__button" :class="button.class">
         {{button.text}}
       </button>
     </a>
@@ -69,7 +69,13 @@ defineProps({
     text-align: center;
   }
 
-  &--orange {
+  &--lime {
+    background-color: lighten($lime, 35%);
+    color: $dark-blue;
+    text-align: center;
+  }
+
+  &--yellow {
     background-color: lighten($lemon, 40%);
     color: $dark-blue;
     text-align: center;
