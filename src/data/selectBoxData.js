@@ -6,7 +6,7 @@ export const SELECT_DATA =  {
             text: "It's very difficult to catch people committing misdemeanours so why not confess to us directly.."
         },
         selectFormData: {
-            formId: "i-form",
+            formId: "confess-form",
             formColor: "blue",
             selectBoxes: [
                 {id: 1,

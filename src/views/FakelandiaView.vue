@@ -1,14 +1,13 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
-import DataChart from '@/components/DataChart.vue';
+import ChartBlock from '@/components/ChartBlock.vue';
+
 const view = "fakelandia";
 </script>
 <template>
   <PageHeader :view = "view"/>
   <main class = "main-content main-content--fakelandia">
-    <slot-chart-block :view = "view">
-      <DataChart :view = "view"/>
-    </slot-chart-block>
+    <ChartBlock :view = "view"/>
   </main>
 </template>
 

@@ -1,12 +1,12 @@
 <script setup>
 import SelectOption from './SelectOption.vue';
-import { ref } from 'vue';
 import {useDataTallyStore} from '@/stores/dataTally';
 import { appStore } from '../store.js';
-const store = useDataTallyStore(appStore);
-import {CHART_DATA} from './../data/chartData';
+import { ref } from 'vue';
 
-const props = defineProps({
+const chartDataStore = useDataTallyStore(appStore);
+
+defineProps({
     label: {
     type: String,
     required: true
@@ -20,20 +20,19 @@ const props = defineProps({
     required: true
     }
 })
+
 const selected = ref();
 
 function handleOptionChange(event) {
-    store.$patch(event.target.id, selected.value);
-    const {getDataPoints} = useDataTallyStore(appStore);
-    const {dataPoints} = CHART_DATA[event.target.id].chart;
-    const data = getDataPoints(dataPoints, event.target.id);
-    console.log("data in select", data);
+    chartDataStore.markSelected(event.target.id, selected.value);
 }
 </script>
 
 <template>
     <label class="select-box__label" :for="selectId">{{ label }}</label>
-        <select class="select-box__input" :id="selectId" v-model="selected" @change="handleOptionChange">
+
+        <select class="select-box__input" :id="selectId" v-model="selected" 
+        v-on:change="handleOptionChange">
             <SelectOption
             v-for="(option) in options"
             :key="option.value"

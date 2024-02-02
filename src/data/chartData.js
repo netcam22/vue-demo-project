@@ -45,7 +45,7 @@ export const CHART_DATA = {
                 { name: "lift", label: "Speaking In a Lift", color: "#242a6d" },
                 { name: "united", label: "Supporting Manchester United", color: "#ef1e24"},
             ],
-            animationDuration: 1000
+            animationDuration: 500
         }
     },
     marsrover: {
