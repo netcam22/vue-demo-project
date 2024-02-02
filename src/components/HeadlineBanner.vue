@@ -35,11 +35,6 @@ defineProps({
         flex-basis: 50%;
     }
 
-    &--headline-image {
-    background-image: url("./../assets/images/houses.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    }
     &--thirty {
         min-height: 30vh;
     }
