@@ -1,10 +1,15 @@
 <script setup>
 import { SELECT_DATA } from '@/data/selectBoxData';
 import SelectForm from './SelectForm.vue';
+
 const props = defineProps({
     view: {
-    type: String,
-    required: true
+        type: String,
+        required: true
+    },
+    handleOptionSubmit: {
+        type: Function,
+        required: true
     }
 })
 const {ariaLabel, heading, text} = SELECT_DATA[props.view].selectBoxData;
@@ -18,7 +23,7 @@ const {ariaLabel, heading, text} = SELECT_DATA[props.view].selectBoxData;
             {{text}}
         </p>
 
-        <SelectForm :view = "view"/>
+        <SelectForm :view="view" :handleOptionSubmit="handleOptionSubmit"/>
 
         </section>
 </template>

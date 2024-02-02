@@ -27,7 +27,7 @@ import HeadlineBlock from './HeadlineBlock.vue';
         flex-basis: 50%;
     }
 
-    &--charity-people {
+    &--headline-image {
     background-image: url("./../assets/images/houses.png");
     background-repeat: no-repeat;
     background-size: contain;

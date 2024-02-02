@@ -1,9 +1,14 @@
 <script setup>
 import SelectInput from './SelectInput.vue';
 import { SELECT_DATA } from '@/data/selectBoxData';
+
 const props = defineProps({
     view: {
     type: String,
+    required: true
+    },
+    handleOptionSubmit: {
+    type: Function,
     required: true
     }
 })
@@ -19,7 +24,8 @@ const {formColor, formId, selectBoxes, buttonColor, buttonText} = SELECT_DATA[pr
               :selectId="item.selectId" 
               :options="item.options"
           />
-            <button class="select-box__button" :class="`select-box__button--${buttonColor}`" type="button">{{ buttonText }}</button>
+            <button v-on:click="handleOptionSubmit" class="select-box__button"  :id="view"
+            :class="`select-box__button--${buttonColor}`" type="button">{{ buttonText }}</button>
           </form>
 </template>
 
