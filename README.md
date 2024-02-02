@@ -1,7 +1,16 @@
-# Vue 3 + Vite
+👋 Vue 3 Reusable Components 👋
+by Annette Le Sage version 1.0 (updated 2/2/24)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+👀 This is a demo project that I have developed with Vue 3. I have been experimenting with creating reusable components to which custom data, logic and styling can be applied. All three pages, Home, Fakelandia and Mars Rover, draw from the same set of components. Although the pages have different content and styling, each uses same set of components.
 
-## Recommended IDE Setup
+✨ Technologies
+The project uses the JavaScript framework Vue.js and the Vite development environment. The Vue 3 Composition API has been used in this project. The Canvas.js Javascript library has been included to use to create charts, for which data is randomly generated in Vue Composables. Vue Router has been used for page routing and Pinia has been used for State Management.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+🙂 Components
+The components have been designed to be reusable and the aim of the project has been to experiment with and demonstrate their flexibility.
+
+🌱 CSS
+This project demonstrates styles in CSS using BEM (Block__Element--modifier) naming conventions, which have been extended further using SASS.
+
+📫 Usage
+To use, fork the repo, run npm install and then npm run dev.
