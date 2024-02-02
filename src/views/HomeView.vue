@@ -1,6 +1,7 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
 import HeadlineBanner from '@/components/HeadlineBanner.vue';
+import PageFooter from '@/components/PageFooter.vue';
 const view = "home";
 const reactView = "react";
 const javascriptView = "javascript";
@@ -14,6 +15,7 @@ const bannerView = "hero";
     <HeadlineBanner :view = "reactView"/>
     <HeadlineBanner :view = "javascriptView"/>
   </main>
+  <PageFooter/>
 </template>
 
 <style lang="scss" scoped>
@@ -35,4 +37,11 @@ const bannerView = "hero";
         padding: 0;
     }
   }
+.footer {
+    background-color: lighten($coconut, 40%);
+    color: $dark-blue;
+    font-family: "BenchNine-Bold";
+    font-size: 1.1rem;
+    font-weight: bold;
+}
 </style>

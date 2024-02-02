@@ -1,6 +1,7 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
 import ChartBlock from '@/components/ChartBlock.vue';
+import PageFooter from '@/components/PageFooter.vue';
 
 const view = "fakelandia";
 </script>
@@ -9,6 +10,7 @@ const view = "fakelandia";
   <main class = "main-content main-content--fakelandia">
     <ChartBlock :view = "view"/>
   </main>
+  <PageFooter/>
 </template>
 
 <style lang="scss" scoped >
@@ -41,4 +43,10 @@ const view = "fakelandia";
         padding: 2% 0 7% 2%;
     }
   }
+  .footer {
+    background-color: lighten($blueberry, 40%);
+    color: $dark-blue;
+    font-family: "Algeria";
+    font-size: 1.1rem;
+}
 </style>
