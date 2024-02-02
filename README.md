@@ -1,5 +1,7 @@
-👋 Vue 3 Reusable Components 👋
-by Annette Le Sage version 1.0 (updated 2/2/24)
+# 👋 Vue 3 Reusable Components 👋
+
+by Annette Le Sage 
+version 1.0 (updated 2/2/24)
 
 👀 This is a demo project that I have developed with Vue 3. I have been experimenting with creating reusable components to which custom data, logic and styling can be applied. All three pages, Home, Fakelandia and Mars Rover, draw from the same set of components. Although the pages have different content and styling, each uses same set of components.
 
