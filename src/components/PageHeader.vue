@@ -31,6 +31,7 @@ const {imageSource, navTextColor, mobileBackground} = HEADER_SETTINGS[props.view
 	flex-wrap: wrap;
     box-sizing: border-box;
     min-height: 30vh;
+    
     @include respond-medium {
         flex-direction: row;
         justify-content: center;

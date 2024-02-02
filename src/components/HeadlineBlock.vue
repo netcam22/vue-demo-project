@@ -10,7 +10,11 @@ defineProps({
   },
   paragraph: {
     type: Object,
-    required: false
+    required: true
+  },
+  button: {
+    type: Object,
+    required: true
   }
 })
 </script>
@@ -18,9 +22,12 @@ defineProps({
 <template>
   <section :class="section.class" :aria-labelledby="section.aria">
     <h1 :class="heading.class" :id="section.aria">{{heading.text}}</h1>
-      <p v-if="paragraph" :class="paragraph.class">
+      <p v-if="paragraph.text !=='' " :class="paragraph.class">
         {{paragraph.text}}
       </p>
+      <button v-if="button.text !=='' " :class="button.class">
+        {{button.text}}
+      </button>
       <slot></slot>
   </section>
 </template>

@@ -1,15 +1,15 @@
 <script setup>
 import PageHeader from '@/components/PageHeader.vue';
-import HeroBanner from '@/components/HeroBanner.vue';
 import HeadlineBanner from '@/components/HeadlineBanner.vue';
 const view = "home";
+const bannerView = "hero";
 </script>
 
 <template>
   <PageHeader :view = "view" />
   <main class = "main-content">
-    <HeroBanner />
-    <HeadlineBanner />
+    <HeadlineBanner :view = "bannerView"/>
+    <HeadlineBanner :view = "view"/>
   </main>
 </template>
 
