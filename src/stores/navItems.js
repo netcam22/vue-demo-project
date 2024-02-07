@@ -5,7 +5,7 @@ export const useNavItemsStore = defineStore("navItems", {
     menu: [
       {id: 1, name: 'home', title: "Home"},
       {id: 2, name: 'fakelandia', title: "Fakelandia"},
-      {id: 4, name: 'marsrover', title: "Mars Rover"}
+      {id: 3, name: 'marsrover', title: "Mars Rover"}
     ]
   }
   ),

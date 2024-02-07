@@ -1,15 +1,12 @@
 <script setup>
-defineProps({
-    name: {
-    type: String,
-    required: true
-    }
-})
+import {FOOTER_SETTINGS} from './../data/footerSettings';
+const {author} = FOOTER_SETTINGS;
+const date = new Date().getFullYear();
 </script>
 
 <template>
     <footer className = "footer">
-        <p>@ Annette Le Sage 2024</p>
+        <p>{{`@ ${author} ${date}`}}</p>
     </footer>
 </template>
 

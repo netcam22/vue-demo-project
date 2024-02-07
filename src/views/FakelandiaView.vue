@@ -10,7 +10,7 @@ const view = "fakelandia";
   <main class = "main-content main-content--fakelandia">
     <ChartBlock :view = "view"/>
   </main>
-  <PageFooter/>
+  <PageFooter />
 </template>
 
 <style lang="scss" scoped >
