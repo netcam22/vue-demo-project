@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { ref } from 'vue';
 import { CHART_VALUES} from '@/data/chartData';
 import useCountData from "./../composables/useCountData";
 import useGetChartData from "./../composables/useGetChartData";
@@ -12,26 +13,27 @@ const fakelandiaValues = initialValues("fakelandia");
 const marsroverValues = initialValues("marsrover");
 
 export const useDataTallyStore = defineStore("dataTally", () => {
-    const countTally = {
+    const countTally = ref({
       fakelandia: fakelandiaValues,
       marsrover: marsroverValues
-    };
-    const selected = {};
+    });
+    const selected = ref({});
 
     function getDataPoints(dataPoints, view) {
-      return useChartDataPoints(dataPoints, countTally[view]);
+      return useChartDataPoints(dataPoints, countTally.value[view]);
     }
 
     function $subscribe(dataType) {
-      return countTally[dataType];
+      return countTally.value[dataType];
     };
 
     function $patch(dataType, kind) {
-      countTally[dataType] = {...countTally[dataType], [kind]:countTally[dataType][kind]+=1}
+      countTally.value[dataType] = 
+      {...countTally.value[dataType], [kind]:countTally.value[dataType][kind]+=1}
     };
 
     function markSelected(dataType, option) {
-      selected[dataType] = option;
+      selected.value[dataType] = option;
     };
   
     return {
